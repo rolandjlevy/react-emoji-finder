@@ -6,12 +6,21 @@ import emoji from 'node-emoji';
 
 const SearchEmojis = () => {
   const [query, setQuery] = useState('');
-  const results = emoji.search(query);
-  const onKeyUp = (e) => {
+  let results = emoji.search(query);
+
+  const handleKeyUp = (e) => {
     const input = e.target.value.toLowerCase();
     setQuery(input);
   }
-  const onHandleClick = (emoji) => {
+
+  const handleInput = (e) => {
+    if (!e.currentTarget.value.length) {
+      setQuery('');
+      results = [];
+    }
+  }
+
+  const handleClick = (emoji) => {
 	  copy(emoji);
     toast('copied to clipboard', getOptions(emoji));
   }
@@ -20,12 +29,18 @@ const SearchEmojis = () => {
     <>
       <main className="wrapper">
         <h3>Emoji finder <span role="img" aria-label="search emoji">🔎</span></h3>
-        <input type="search" onKeyUp={onKeyUp} className="search-input" placeholder="Search for emojis..." />
+        <input 
+          type="search" 
+          onKeyUp={handleKeyUp} 
+          onInput={handleInput} 
+          className="search-input" 
+          placeholder="Search for emojis..." 
+        />
         {query.length && results.length ? 
           (<ul className="search-results">
             {results.map(item => {
               const emojiName = item.key.replace(/_/g, ' ');
-              return <li key={item.key} onClick={() => onHandleClick(item.emoji)}>{emojiName}: <span role="img" aria-label={emojiName}>{item.emoji}</span></li>
+              return <li key={item.key} onClick={() => handleClick(item.emoji)}>{emojiName}: <span role="img" aria-label={emojiName}>{item.emoji}</span></li>
             })}
           </ul>) : ''
         }
