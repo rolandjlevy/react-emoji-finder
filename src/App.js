@@ -3,9 +3,9 @@ import SearchEmojis from './SearchEmojis';
 
 function App() {
   return (
-    <main className="wrapper">
+    <>
       <SearchEmojis />
-    </main>
+    </>
   );
 }
 

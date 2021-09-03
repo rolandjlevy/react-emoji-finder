@@ -18,16 +18,18 @@ const SearchEmojis = () => {
  
   return (
     <>
-      <h3>Emoji finder <span role="img" aria-label="search emoji">🔎</span></h3>
-      <input type="text" onKeyUp={onKeyUp} className="search-input" placeholder="Search for emojis..." />
-      {query.length && results.length ? 
-        (<ul className="search-results">
-          {results.map(item => {
-            const emojiName = item.key.replace(/_/g, ' ');
-            return <li key={item.key} onClick={() => onHandleClick(item.emoji)}>{emojiName}: <span role="img" aria-label={emojiName}>{item.emoji}</span></li>
-          })}
-        </ul>) : ''
-      }
+      <main className="wrapper">
+        <h3>Emoji finder <span role="img" aria-label="search emoji">🔎</span></h3>
+        <input type="search" onKeyUp={onKeyUp} className="search-input" placeholder="Search for emojis..." />
+        {query.length && results.length ? 
+          (<ul className="search-results">
+            {results.map(item => {
+              const emojiName = item.key.replace(/_/g, ' ');
+              return <li key={item.key} onClick={() => onHandleClick(item.emoji)}>{emojiName}: <span role="img" aria-label={emojiName}>{item.emoji}</span></li>
+            })}
+          </ul>) : ''
+        }
+      </main>
       <Toaster />
     </>
   )

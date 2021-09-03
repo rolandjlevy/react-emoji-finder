@@ -8,3 +8,6 @@ https://react-hot-toast.com/docs/toast
 
 ### Not used
 https://www.npmjs.com/package/react-copy-to-clipboard
+
+### Research
+https://stackoverflow.com/questions/6258521/clear-icon-inside-input-text/6258628
