@@ -34,7 +34,7 @@ const SearchEmojis = () => {
           onKeyUp={handleKeyUp} 
           onInput={handleInput} 
           className="search-input" 
-          placeholder="Search for emojis..." 
+          placeholder="Search..." 
         />
         {query.length && results.length ? 
           (<ul className="search-results">
