@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import copy from 'copy-text-to-clipboard';
 import toast, { Toaster } from 'react-hot-toast';
 import { getOptions } from './toastOptions';
@@ -7,6 +7,13 @@ import emoji from 'node-emoji';
 const SearchEmojis = () => {
   const [query, setQuery] = useState('');
   let results = emoji.search(query);
+  const searchInput = useRef(null);
+  
+  useEffect(() => {
+    if (searchInput.current) {
+      searchInput.current.focus();
+    }
+  }, []);
 
   const handleKeyUp = (e) => {
     const input = e.target.value.toLowerCase();
@@ -35,6 +42,7 @@ const SearchEmojis = () => {
           onInput={handleInput} 
           className="search-input" 
           placeholder="Search..." 
+          ref={searchInput}
         />
         {query.length && results.length ? 
           (<ul className="search-results">

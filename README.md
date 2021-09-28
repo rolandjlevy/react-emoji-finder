@@ -11,3 +11,6 @@
 - [node-emoji](https://www.npmjs.com/package/node-emoji)
 - [react-hot-toast](https://www.npmjs.com/package/react-hot-toast)
 - [copy-text-to-clipboard](https://www.npmjs.com/package/copy-text-to-clipboard)
+
+### Links
+- https://blog.maisie.ink/react-ref-autofocus/
