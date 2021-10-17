@@ -7,15 +7,27 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+/* body {
   margin: 0;
   background: #f0f0f0;
+} */
+
+body {
+  background-color: #9cd2fc;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.5) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(255,255,255,0.5) 2px, transparent 2px),
+    linear-gradient(rgba(255,255,255,0.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.25) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
 }
 
 h3 {
   font-size: 1.5rem;
   margin-bottom: 10px;
-  font-weight: 500;
+  font-weight: 700;
+  color: #015291;
 }
 
 .wrapper {
