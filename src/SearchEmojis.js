@@ -35,13 +35,13 @@ const SearchEmojis = () => {
   return (
     <>
       <main className="wrapper">
-        <h3>Emoji finder <span role="img" aria-label="search emoji">🔎</span></h3>
+        <h3>Emoji finder</h3>
         <input 
           type="search" 
           onKeyUp={handleKeyUp} 
           onInput={handleInput} 
           className="search-input" 
-          placeholder="Search..." 
+          placeholder="Search 🔎" 
           ref={searchInput}
         />
         {query.length && results.length ? 

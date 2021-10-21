@@ -7,11 +7,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* body {
-  margin: 0;
-  background: #f0f0f0;
-} */
-
 body {
   background-color: #9cd2fc;
   background-image:
@@ -24,10 +19,11 @@ body {
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   margin-bottom: 10px;
+  letter-spacing: 1px;
   font-weight: 700;
-  color: #015291;
+  color: #003055;
 }
 
 .wrapper {
