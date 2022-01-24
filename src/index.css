@@ -30,10 +30,40 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: calc(100vh - 60px);
   flex-direction: column;
   position: relative;
   transform: translate(0, -20%);
+}
+
+.footer {
+  height: 44px;
+  color: #003055;
+  display: flex;
+  justify-content: center;
+}
+
+.footer > span {
+  height: fit-content;
+}
+
+.footer > a {
+  text-decoration: underline;
+  margin-left: 5px;
+  color: #003055;
+  font-weight: 700;
+  height: fit-content;
+}
+
+.footer > a:hover {
+  text-decoration: none;
+}
+
+.new-tab-icon::after {
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 900; 
+  content: "\f35d";
+  margin-left: 5px;
 }
 
 /******************/
