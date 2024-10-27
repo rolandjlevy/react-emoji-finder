@@ -2,7 +2,7 @@
 
 > Search utility for finding and copying emojis to the clipboard. Includes autocomplete. Made with React.
 
-- [Live demo](https://react-emoji-finder.rolandjlevy.repl.co/)
+- [Live demo](https://react-emoji-finder-mu.vercel.app/)
 - [Github repo](https://github.com/rolandjlevy/react-emoji-finder)
 
 ### Node packages used
