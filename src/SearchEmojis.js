@@ -8,7 +8,7 @@ const SearchEmojis = () => {
   const [query, setQuery] = useState('');
   let results = emoji.search(query);
   const searchInput = useRef(null);
-  
+
   useEffect(() => {
     if (searchInput.current) {
       searchInput.current.focus();
@@ -18,44 +18,53 @@ const SearchEmojis = () => {
   const handleKeyUp = (e) => {
     const input = e.target.value.toLowerCase();
     setQuery(input);
-  }
+  };
 
   const handleInput = (e) => {
     if (!e.currentTarget.value.length) {
       setQuery('');
       results = [];
     }
-  }
+  };
 
   const handleClick = (emoji) => {
-	  copy(emoji);
+    copy(emoji);
     toast('copied to clipboard', getOptions(emoji));
-  }
- 
+  };
+
   return (
     <>
       <main className="wrapper">
-        <h3>Emoji finder</h3>
-        <input 
-          type="search" 
-          onKeyUp={handleKeyUp} 
-          onInput={handleInput} 
-          className="search-input" 
-          placeholder="Search 🔎" 
+        <h3>QuickEmoji</h3>
+        <input
+          type="search"
+          onKeyUp={handleKeyUp}
+          onInput={handleInput}
+          className="search-input"
+          placeholder="Search 🔎"
           ref={searchInput}
         />
-        {query.length && results.length ? 
-          (<ul className="search-results">
-            {results.map(item => {
+        {query.length && results.length ? (
+          <ul className="search-results">
+            {results.map((item) => {
               const emojiName = item.key.replace(/_/g, ' ');
-              return <li key={item.key} onClick={() => handleClick(item.emoji)}>{emojiName}: <span role="img" aria-label={emojiName}>{item.emoji}</span></li>
+              return (
+                <li key={item.key} onClick={() => handleClick(item.emoji)}>
+                  {emojiName}:{' '}
+                  <span role="img" aria-label={emojiName}>
+                    {item.emoji}
+                  </span>
+                </li>
+              );
             })}
-          </ul>) : ''
-        }
+          </ul>
+        ) : (
+          ''
+        )}
       </main>
       <Toaster />
     </>
-  )
-}
+  );
+};
 
 export default SearchEmojis;
