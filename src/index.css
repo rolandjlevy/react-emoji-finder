@@ -119,7 +119,7 @@ h3 {
 ul.search-results {
   --offset: 2px;
   position: absolute;
-  top: calc(50% + 55px);
+  top: calc(50% + 58px);
   padding: 0;
   max-width: calc(400px - var(--offset));
   width: calc(100vw - 60px - var(--offset));
