@@ -35,7 +35,15 @@ const SearchEmojis = () => {
   return (
     <>
       <main className="wrapper">
-        <h3>QuickEmoji</h3>
+        <h3 className="dynamic-heading">
+          QuickEmoji{' '}
+          <span className="dynamic-heading-text" aria-live="polite">
+            <span role="img" aria-label="lightning bolt">
+              ⚡
+            </span>{' '}
+            Find it fast
+          </span>
+        </h3>
         <input
           type="search"
           onKeyUp={handleKeyUp}

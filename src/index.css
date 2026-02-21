@@ -1,7 +1,18 @@
 * {
   font-size: 1rem;
-  font-family: 'DM Sans', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family:
+    'DM Sans',
+    sans-serif,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -10,20 +21,55 @@
 body {
   background-color: #9cd2fc66;
   background-image:
-    linear-gradient(rgba(255,255,255,0.5) 2px, transparent 2px),
-    linear-gradient(90deg, rgba(255,255,255,0.5) 2px, transparent 2px),
-    linear-gradient(rgba(255,255,255,0.25) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.25) 1px, transparent 1px);
-  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
-  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+    linear-gradient(rgba(255, 255, 255, 0.5) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.5) 2px, transparent 2px),
+    linear-gradient(rgba(255, 255, 255, 0.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.25) 1px, transparent 1px);
+  background-size:
+    100px 100px,
+    100px 100px,
+    20px 20px,
+    20px 20px;
+  background-position:
+    -2px -2px,
+    -2px -2px,
+    -1px -1px,
+    -1px -1px;
 }
 
 h3 {
-  font-size: 1.75rem;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
+  font-size: 2rem;
+  margin-bottom: 12px;
+  letter-spacing: 0.4px;
+  font-weight: 800;
+  color: #0b3d66;
+}
+
+.dynamic-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  line-height: 1.2;
+}
+
+.dynamic-heading-text {
+  display: inline-block;
+  color: #0f6ea8;
   font-weight: 700;
-  color: #003055;
+  animation: headingFade 0.35s ease;
+}
+
+@keyframes headingFade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .wrapper {
@@ -60,9 +106,9 @@ h3 {
 }
 
 .new-tab-icon::after {
-  font-family: "Font Awesome 5 Free"; 
-  font-weight: 900; 
-  content: "\f35d";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f35d';
   margin-left: 5px;
 }
 
@@ -109,7 +155,7 @@ ul.search-results > li:hover {
 /* Search input */
 /****************/
 
-.search-input[type="search"] {
+.search-input[type='search'] {
   padding: 5px 10px;
   max-width: 400px;
   width: calc(100vw - 60px);
@@ -118,7 +164,12 @@ ul.search-results > li:hover {
   height: 37px;
 }
 
-.search-input[type="search"]::-webkit-search-cancel-button {
+.search-input[type='search']:focus {
+  border-color: #0f6ea8;
+  box-shadow: 0 0 0 2px rgba(15, 110, 168, 0.1);
+}
+
+.search-input[type='search']::-webkit-search-cancel-button {
   -webkit-appearance: none;
   appearance: none;
   height: 10px;
