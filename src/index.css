@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: #9cd2fc;
+  background-color: #9cd2fc66;
   background-image:
     linear-gradient(rgba(255,255,255,0.5) 2px, transparent 2px),
     linear-gradient(90deg, rgba(255,255,255,0.5) 2px, transparent 2px),
